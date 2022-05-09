@@ -1,24 +1,24 @@
 package com.example.proyectois
 
+
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.proyectois.databinding.ActivityLoginBinding
+import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityLoginBinding
+class LoginActivity : AppCompatActivity(){
+
+   lateinit var btnSiguiente : Button;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_login);
 
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-}
+        btnSiguiente = findViewById(R.id.creaCuenta);
+        btnSiguiente.setOnClickListener{
+            startActivity(Intent(this, CrearPerfil::class.java))
+        }
+    }
 }
