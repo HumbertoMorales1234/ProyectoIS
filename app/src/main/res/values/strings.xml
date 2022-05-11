@@ -20,4 +20,14 @@
         <item>AB-</item>
         <item>O-</item>
     </string-array>
+    <string-array name="padecimientosCronicos">
+        <item>Artritis</item>
+        <item>Asma</item>
+        <item>Cáncer</item>
+        <item>Diabetes</item>
+        <item>Enfermedades del Corazón</item>
+        <item>Epilepsia</item>
+        <item>EPOC</item>
+        <item>VIH/sida-</item>
+    </string-array>
 </resources>

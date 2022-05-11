@@ -10,8 +10,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-55dp">
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-70dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -22,15 +22,15 @@
                 android:layout_width="148dp"
                 android:layout_height="125dp"
                 android:layout_marginTop="16dp"
+                android:src="@mipmap/logo_e_salud_jpg"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/ConfirmaContraseña_CreaP"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/estilo_edit_text"
                 android:ems="10"
@@ -44,7 +44,7 @@
             <EditText
                 android:id="@+id/apellidoP_CreaP"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/estilo_edit_text"
                 android:ems="10"
@@ -58,7 +58,7 @@
             <EditText
                 android:id="@+id/apellidoM_CreaP"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/estilo_edit_text"
                 android:ems="10"
@@ -72,7 +72,7 @@
             <EditText
                 android:id="@+id/telefono_CreaP"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/estilo_edit_text"
                 android:ems="10"
@@ -86,7 +86,7 @@
             <EditText
                 android:id="@+id/Clave_CreaP"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/estilo_edit_text"
                 android:ems="10"
@@ -100,7 +100,7 @@
             <EditText
                 android:id="@+id/nombre_CreaP"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/estilo_edit_text"
                 android:ems="10"
@@ -141,27 +141,27 @@
                 android:id="@+id/salirCrear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="196dp"
+                android:layout_marginTop="44dp"
                 android:backgroundTint="#D55454"
                 android:text="Salir"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.228"
+                app:layout_constraintHorizontal_bias="0.154"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/alergias_medicamentosCreaP" />
 
             <Button
                 android:id="@+id/guardarCrear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="196dp"
+                android:layout_marginTop="44dp"
                 android:backgroundTint="#5AD2C6"
                 android:text="Guardar"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.726"
+                app:layout_constraintHorizontal_bias="0.84"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/alergias_medicamentosCreaP" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
@@ -180,12 +180,63 @@
                     android:layout_height="61dp"
                     android:layout_weight="1"
                     android:backgroundTint="#5AD2C6"
+                    android:hint="Tipo Sanguineo"
                     android:inputType="none"
                     android:text=""
-                    android:hint="Tipo Sanguineo"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+                android:layout_width="359dp"
+                android:layout_height="66dp"
+                android:layout_marginTop="28dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+                <AutoCompleteTextView
+                    android:id="@+id/seleccionCronicoCreaP"
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#5AD2C6"
+                    android:hint="Padecimiento Crónico"
+                    android:inputType="none"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/alergias_medicamentosCreaP"
+                android:layout_width="378dp"
+                android:layout_height="104dp"
+                android:layout_marginTop="36dp"
+                android:ems="10"
+                android:hint="Alergias a Medicamentos"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/alergias_comunes_CreaP" />
+
+            <EditText
+                android:id="@+id/alergias_comunes_CreaP"
+                android:layout_width="372dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="44dp"
+                android:ems="10"
+                android:hint="Alergias Comunes"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.416"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

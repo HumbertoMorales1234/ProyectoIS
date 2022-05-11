@@ -94,25 +94,27 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="105dp"
-            android:layout_height="108dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="121dp"
+            android:layout_height="73dp"
+            android:layout_marginTop="48dp"
+            android:src="@mipmap/logo_e_salud_jpg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/errorLogin"
+            android:layout_width="253dp"
+            android:layout_height="31dp"
+            android:text="Usuario o Contraseña incorrectos"
+            android:textAlignment="center"
+            android:textColor="#FF0000"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clave_Login" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/errorLogin"
-        android:layout_width="253dp"
-        android:layout_height="31dp"
-        android:text="Usuario o Contraseña incorrectos"
-        android:textAlignment="center"
-        android:textColor="#FF0000"
-        android:visibility="invisible"
-        app:layout_anchor="@+id/constraintLayout"
-        app:layout_anchorGravity="center" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
