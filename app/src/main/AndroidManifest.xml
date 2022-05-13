@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoIS">
         <activity
+            android:name=".Medicinas"
+            android:exported="false" />
+        <activity
             android:name=".CrearPerfil"
             android:exported="false" />
         <activity
