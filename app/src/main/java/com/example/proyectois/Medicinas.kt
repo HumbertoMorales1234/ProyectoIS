@@ -7,12 +7,14 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
 class Medicinas : AppCompatActivity() {
-    lateinit var botonNoti: Button;
+    lateinit var botonNoti: Button
     //Creación del canal de manera global
 
     val canalID = "chat"
@@ -24,7 +26,7 @@ class Medicinas : AppCompatActivity() {
 
         //Botón de prueba
 
-        botonNoti = findViewById(R.id.botonNoti);
+        botonNoti = findViewById(R.id.botonNoti)
 
 
         //Verificar si la versión requiere canal, a partir de la versión "O (Oreo)" sí se requiere un canal
@@ -54,10 +56,24 @@ class Medicinas : AppCompatActivity() {
         }
 
         }
-
-
-
-
+//Configuración del Menu ---------------------------------------------------------------------------
+    // Crea al menu de forma visible
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+    // Agrega las funcionalidades de los items del menu
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.signosVitales -> startActivity(Intent(this, Resumen::class.java))
+            R.id.resumen -> startActivity(Intent(this, Resumen::class.java))
+            R.id.perfilUsuario -> startActivity(Intent(this, EdicionPerfil::class.java))
+            R.id.medicinas -> startActivity(Intent(this, Medicinas::class.java))
+            R.id.salirSesion -> startActivity(Intent(this, LoginActivity::class.java))
+        }
+        return super.onOptionsItemSelected(item)
+    }
+//--------------------------------------------------------------------------------------------------
 
         //Construcción de la notificación
 

@@ -10,28 +10,28 @@ import android.widget.Button
 
 class CrearPerfil : AppCompatActivity() {
 
-        lateinit var salir : Button;
-        lateinit var arregloSangres : AutoCompleteTextView;
-        lateinit var arregloCronos : AutoCompleteTextView;
+        private lateinit var salir : Button
+        private lateinit var arregloSangres : AutoCompleteTextView
+        private lateinit var arregloCronos : AutoCompleteTextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crear_perfil)
 
         // Configuracion del array adapter de tipos sanguineos - Esto es para que haga funcion de cajita
-        val sangres = resources.getStringArray(R.array.tiposSanguineos);
+        val sangres = resources.getStringArray(R.array.tiposSanguineos)
         val arrayAdapterSangre = ArrayAdapter(this, R.layout.dropdown_tipos_sangre, sangres)
         arregloSangres= findViewById(R.id.seleccionSanguineoCreaP)
-        arregloSangres.setAdapter(arrayAdapterSangre);
+        arregloSangres.setAdapter(arrayAdapterSangre)
 
         //Array adapter de enfermedades crónicas.
         val cronicos = resources.getStringArray(R.array.padecimientosCronicos)
         val arrayAdapterCronicos = ArrayAdapter(this, R.layout.dropdown_tipos_cronicos, cronicos)
         arregloCronos = findViewById(R.id.seleccionCronicoCreaP)
-        arregloCronos.setAdapter(arrayAdapterCronicos);
+        arregloCronos.setAdapter(arrayAdapterCronicos)
 
         //Configuracion de boton de salir de la pantalla de crear perfil
-        salir = findViewById(R.id.salirCrear);
+        salir = findViewById(R.id.salirCrear)
         salir.setOnClickListener{
             startActivity(Intent(this, LoginActivity::class.java))
         }
