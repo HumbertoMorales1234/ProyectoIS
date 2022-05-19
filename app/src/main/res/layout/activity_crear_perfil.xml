@@ -53,7 +53,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nombre_editaP" />
+                app:layout_constraintTop_toBottomOf="@+id/nombre_CreaP" />
 
             <EditText
                 android:id="@+id/apellidoM_CreaP"
@@ -70,14 +70,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/apellidoP_CreaP" />
 
             <EditText
-                android:id="@+id/telefono_CreaP"
+                android:id="@+id/Correo_CreaP"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/estilo_edit_text"
                 android:ems="10"
-                android:hint="  Teléfono"
-                android:inputType="phone"
+                android:hint="  Correo"
+                android:inputType="textEmailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
@@ -95,10 +95,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/telefono_CreaP" />
+                app:layout_constraintTop_toBottomOf="@+id/Correo_CreaP" />
 
             <EditText
-                android:id="@+id/nombre_editaP"
+                android:id="@+id/nombre_CreaP"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="4dp"
