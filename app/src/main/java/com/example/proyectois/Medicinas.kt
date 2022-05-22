@@ -125,7 +125,7 @@ class Medicinas : AppCompatActivity() {
     // Agrega las funcionalidades de los items del menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.signosVitales -> startActivity(Intent(this, Resumen::class.java))
+            R.id.signosVitales -> startActivity(Intent(this, SignosVitales::class.java))
             R.id.resumen -> startActivity(Intent(this, Resumen::class.java))
             R.id.perfilUsuario -> startActivity(Intent(this, EdicionPerfil::class.java))
             R.id.medicinas -> startActivity(Intent(this, Medicinas::class.java))

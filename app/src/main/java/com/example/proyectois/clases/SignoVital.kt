@@ -1,7 +1,7 @@
 package com.example.proyectois.clases
 
 class SignoVital(
-    Tipo: String,
-    medidas: Array<Medida>
+  var  Tipo: String,
+  var  medidas: ArrayList<Float>?
 ) {
 }

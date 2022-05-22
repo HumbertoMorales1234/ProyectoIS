@@ -30,4 +30,11 @@
         <item>EPOC</item>
         <item>VIH/sida-</item>
     </string-array>
+    <string-array name="signosVitales">
+        <item>Presión Arterial</item>
+        <item>Niveles de Azúcar</item>
+        <item>Niveles de Oxígeno</item>
+        <item>Ritmo Cardiaco</item>
+        <item>Temperatura</item>
+    </string-array>
 </resources>

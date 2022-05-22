@@ -36,16 +36,25 @@ class EdicionPerfil : AppCompatActivity() {
     private lateinit var prefs : SharedPreferences
 
     private val llave = "LaLlave"
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edicion_perfil)
+
+    override fun onResume() {
+        super.onResume()
 
 // Configuracion del array adapter de tipos sanguineos - Esto es para que haga funcion de cajita----
         val sangres = resources.getStringArray(R.array.tiposSanguineos)
         val arrayAdapterSangre = ArrayAdapter(this, R.layout.dropdown_tipos_sangre, sangres)
-        arregloSangres = findViewById(R.id.seleccionSanguineoeditaP)
         arregloSangres.setAdapter(arrayAdapterSangre)
 //--------------------------------------------------------------------------------------------------
+
+//Array adapter de enfermedades crónicas.-----------------------------------------------------------
+        val cronicos = resources.getStringArray(R.array.padecimientosCronicos)
+        val arrayAdapterCronicos = ArrayAdapter(this, R.layout.dropdown_tipos_cronicos, cronicos)
+        arregloCronos.setAdapter(arrayAdapterCronicos)
+//--------------------------------------------------------------------------------------------------
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_edicion_perfil)
 
         nombre = findViewById(R.id.nombre_editaP)
         apellidoP = findViewById(R.id.apellidoP_editaP)
@@ -54,16 +63,11 @@ class EdicionPerfil : AppCompatActivity() {
         confirmar = findViewById(R.id.ConfirmaContraseña_editaP)
         alergiasC = findViewById(R.id.alergias_comunes_editaP)
         alergiasM = findViewById(R.id.alergias_medicamentoseditaP)
-
+        arregloSangres = findViewById(R.id.seleccionSanguineoeditaP)
+        arregloCronos = findViewById(R.id.seleccionCronicoeditaP)
         cancelar = findViewById(R.id.cancelarCambios)
         guardar = findViewById(R.id.guardarCambios)
 
-//Array adapter de enfermedades crónicas.-----------------------------------------------------------
-        val cronicos = resources.getStringArray(R.array.padecimientosCronicos)
-        val arrayAdapterCronicos = ArrayAdapter(this, R.layout.dropdown_tipos_cronicos, cronicos)
-        arregloCronos = findViewById(R.id.seleccionCronicoeditaP)
-        arregloCronos.setAdapter(arrayAdapterCronicos)
-//--------------------------------------------------------------------------------------------------
         val gson = Gson()
         val Pacientes = ArrayList<Paciente>()
 
@@ -159,7 +163,7 @@ class EdicionPerfil : AppCompatActivity() {
     // Agrega las funcionalidades de los items del menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.signosVitales -> startActivity(Intent(this, Resumen::class.java))
+            R.id.signosVitales -> startActivity(Intent(this, SignosVitales::class.java))
             R.id.resumen -> startActivity(Intent(this, Resumen::class.java))
             R.id.perfilUsuario -> startActivity(Intent(this, EdicionPerfil::class.java))
             R.id.medicinas -> startActivity(Intent(this, Medicinas::class.java))
