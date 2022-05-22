@@ -1,15 +1,28 @@
 package com.example.proyectois
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
 
 class SignosVitales : AppCompatActivity() {
+
+    private lateinit var prefs : SharedPreferences
+    private val llave = "LaLlave"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signos_vitales)
+
+        prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        if(prefs.getInt(llave, -1)==-1){
+            startActivity(Intent(this, LoginActivity::class.java))
+        }else{
+
+        }
     }
 
 //Configuración del Menu ---------------------------------------------------------------------------
@@ -25,9 +38,15 @@ class SignosVitales : AppCompatActivity() {
             R.id.resumen -> startActivity(Intent(this, Resumen::class.java))
             R.id.perfilUsuario -> startActivity(Intent(this, EdicionPerfil::class.java))
             R.id.medicinas -> startActivity(Intent(this, Medicinas::class.java))
-            R.id.salirSesion -> startActivity(Intent(this, LoginActivity::class.java))
+            R.id.salirSesion -> salir()
         }
         return super.onOptionsItemSelected(item)
+    }
+    fun salir(){
+        val editor = prefs.edit()
+        editor.remove(llave)
+        editor.apply()
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 //--------------------------------------------------------------------------------------------------
 }

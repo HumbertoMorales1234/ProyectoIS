@@ -6,9 +6,11 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -29,6 +31,9 @@ class Medicinas : AppCompatActivity() {
     private lateinit var alarmManager: AlarmManager
     private lateinit var  pendingIntent: PendingIntent
 
+    private lateinit var prefs : SharedPreferences
+    private val llave = "LaLlave"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,9 +45,15 @@ class Medicinas : AppCompatActivity() {
         botonNoti.setOnClickListener {
             showTimePicker()
             setAlarm()
-        }
+            }
+
+        prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        if(prefs.getInt(llave, -1)==-1){
+            startActivity(Intent(this, LoginActivity::class.java))
+        }else{
 
         }
+    }
 
     private fun cancelAlarm() {
         alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
@@ -118,9 +129,15 @@ class Medicinas : AppCompatActivity() {
             R.id.resumen -> startActivity(Intent(this, Resumen::class.java))
             R.id.perfilUsuario -> startActivity(Intent(this, EdicionPerfil::class.java))
             R.id.medicinas -> startActivity(Intent(this, Medicinas::class.java))
-            R.id.salirSesion -> startActivity(Intent(this, LoginActivity::class.java))
+            R.id.salirSesion -> salir()
         }
         return super.onOptionsItemSelected(item)
+    }
+    fun salir(){
+        val editor = prefs.edit()
+        editor.remove(llave)
+        editor.apply()
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 //--------------------------------------------------------------------------------------------------
 

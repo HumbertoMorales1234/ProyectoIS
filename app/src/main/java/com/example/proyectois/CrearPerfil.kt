@@ -1,5 +1,6 @@
 package com.example.proyectois
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,8 +8,7 @@ import android.util.Log
 import android.widget.*
 import com.example.proyectois.clases.Paciente
 import com.google.gson.Gson
-import java.io.FileReader
-
+import java.io.*
 
 
 class CrearPerfil : AppCompatActivity() {
@@ -88,28 +88,35 @@ class CrearPerfil : AppCompatActivity() {
                 }
 
                 val gson = Gson()
-                val json:String = gson.toJson(paciente)
+                var json:String = gson.toJson(paciente)
+                val Pacientes = ArrayList<Paciente>()
 
                 Log.d("Paciente", json)
 
  //Se verifica que el usuario no exista ------------------------------------------------------------
  //-------------------------------------------------------------------------------------------------
                 try {
-                    val file = FileReader("pacientes.txt")
-                    var c:Int?
+                    val file = InputStreamReader(openFileInput("pacientes.txt"))
+                    val bfr = BufferedReader(file)
+                    var linea = bfr.readLine()
                     var texto = ""
-                    do{
-                        c=file.read()
-                        texto+= (c.toChar())
-                    }while (c !=-1)
-                    val textoJson = gson.fromJson(texto, Array<Paciente>::class.java)
-                    for (n:Paciente in textoJson){
+                    while (linea!=null){
+                        texto+=linea
+                        linea = bfr.readLine()
+                    }
+                    val PacientesJson = gson.fromJson(texto, Array<Paciente>::class.java)
+                    for (n:Paciente in PacientesJson){
+                        Pacientes.add(n)
+                    }
+                    for (n:Paciente in Pacientes){
                         if (paciente.Correo == n.Correo ){
                             throw Exception("Ya existe")
                         }
                     }
+                    Pacientes.add(paciente)
                 }
                 catch (e: Exception){
+                    Log.d("Error:", e.toString())
                     if (e.message == "Ya existe"){
                         throw Exception("Usuario ya registrado")
                     }
@@ -118,12 +125,19 @@ class CrearPerfil : AppCompatActivity() {
   //Este try verifica que Se almaceno correctamente ------------------------------------------------
   //------------------------------------------------------------------------------------------------
                 try {
+                    json = gson.toJson(Pacientes)
+                    Log.d("Pacientes JSON> ", json)
+                    val archivo = OutputStreamWriter(openFileOutput("pacientes.txt", Activity.MODE_PRIVATE))
+                    archivo.write(json)
+                    archivo.close()
 
                 }catch (e: Exception){
+                    Log.d("error:", e.toString())
                     throw Exception("Ocurrio un error al guardar")
                 }
 
                 Toast.makeText(applicationContext, "Transacción Exitosa", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, LoginActivity::class.java))
  //-------------------------------------------------------------------------------------------------
 
             }catch (e: Exception){
@@ -132,4 +146,5 @@ class CrearPerfil : AppCompatActivity() {
             }
         }
     }
+
 }

@@ -10,8 +10,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-70dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-140dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -25,7 +25,8 @@
                 android:src="@mipmap/logo_e_salud_jpg"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="TODO" />
 
             <EditText
                 android:id="@+id/ConfirmaContraseña_editaP"
@@ -70,20 +71,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/apellidoP_editaP" />
 
             <EditText
-                android:id="@+id/telefono_editaP"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/estilo_edit_text"
-                android:ems="10"
-                android:hint="  Correo"
-                android:inputType="textEmailAddress"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/apellidoM_editaP" />
-
-            <EditText
                 android:id="@+id/Clave_editaP"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
@@ -95,7 +82,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/telefono_editaP" />
+                app:layout_constraintTop_toBottomOf="@+id/apellidoM_editaP" />
 
             <EditText
                 android:id="@+id/nombre_editaP"
@@ -216,8 +203,8 @@
                 android:layout_height="104dp"
                 android:layout_marginTop="36dp"
                 android:ems="10"
-                android:hint="Alergias a Medicamentos"
                 android:gravity="start|top"
+                android:hint="Alergias a Medicamentos"
                 android:inputType="textMultiLine"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
@@ -230,8 +217,8 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="44dp"
                 android:ems="10"
-                android:hint="Alergias Comunes"
                 android:gravity="start|top"
+                android:hint="Alergias Comunes"
                 android:inputType="textMultiLine"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.416"
