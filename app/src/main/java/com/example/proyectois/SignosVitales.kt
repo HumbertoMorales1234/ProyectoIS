@@ -124,7 +124,7 @@ class SignosVitales : AppCompatActivity() {
             R.id.signosVitales -> startActivity(Intent(this, SignosVitales::class.java))
             R.id.resumen -> startActivity(Intent(this, Resumen::class.java))
             R.id.perfilUsuario -> startActivity(Intent(this, EdicionPerfil::class.java))
-            R.id.medicinas -> startActivity(Intent(this, Medicinas::class.java))
+            R.id.medicinas -> startActivity(Intent(this, TratamientoActivity::class.java))
             R.id.salirSesion -> salir()
         }
         return super.onOptionsItemSelected(item)
