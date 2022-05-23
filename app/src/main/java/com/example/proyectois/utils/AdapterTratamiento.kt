@@ -24,11 +24,11 @@ class MyAdapter(val context: Context, val res:Int, val list:ArrayList<Tratamient
 
     override fun getView(index: Int, p1: View?, p2: ViewGroup?): View {
         val view = LayoutInflater.from(context).inflate(res,null)
-        val textNombre = view.findViewById<TextView>(R.id.textRowNombre)
-        val textFecha = view.findViewById<TextView>(R.id.textRowFecha)
+        //val textNombre = view.findViewById<TextView>(R.id.textRowNombre)
+        //val textFecha = view.findViewById<TextView>(R.id.textRowFecha)
 
-        textNombre.text = list[index].nombre
-        textFecha.text = list[index].fecha.toString()
+        //textNombre.text = list[index].nombre
+        //textFecha.text = list[index].fecha.toString()
 
         return view
 

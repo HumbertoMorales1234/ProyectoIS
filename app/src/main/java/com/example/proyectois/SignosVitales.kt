@@ -11,10 +11,12 @@ import android.view.MenuItem
 import android.widget.*
 import com.example.proyectois.clases.Paciente
 import com.example.proyectois.clases.SignoVital
+import com.example.proyectois.utils.AdapterVitales
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_signos_vitales.*
 import java.io.BufferedReader
 import java.io.InputStreamReader
+import java.io.OutputStreamWriter
 import java.lang.Exception
 
 
@@ -60,6 +62,13 @@ class SignosVitales : AppCompatActivity() {
                 for (n: Paciente in PacientesJson){
                     Pacientes.add(n)
                 }
+                if(Pacientes[prefs.getInt(llave,-1)].vitales != null){
+                    listSignosVitales.adapter= Pacientes[prefs.getInt(llave,-1)].vitales?.let {
+                        AdapterVitales(
+                            this, R.layout.row_vitales, it
+                        )
+                    }
+                }
             }catch (e: Exception){
                 Log.d("Error", e.toString())
                 Toast.makeText(applicationContext, "Error al cargar", Toast.LENGTH_LONG).show()
@@ -68,12 +77,11 @@ class SignosVitales : AppCompatActivity() {
 
 //Almacena los datos al momento de guardar ---------------------------------------------------------
             guardar.setOnClickListener(){
-                var encontrado = false
                 val signoMedido = arregloSignos.getText().toString()
                 val resultadoMedido = medicion.getText().toString().toFloat()
-                var arraysito = ArrayList<Float>()
+                val arraysito = ArrayList<Float>()
                 arraysito.add(resultadoMedido)
-                var medicionActual = SignoVital(signoMedido, arraysito)
+                val medicionActual = SignoVital(signoMedido, arraysito)
 
                 var SignosVitales = ArrayList<SignoVital>()
 
@@ -104,8 +112,18 @@ class SignosVitales : AppCompatActivity() {
                     Log.d("", json)
                     conta2++
                 }
-                //Falta guardar en archivo
-
+                try {
+                    val json = gson.toJson(Pacientes)
+                    val archivo = OutputStreamWriter(openFileOutput("pacientes.txt", MODE_PRIVATE))
+                    archivo.write(json)
+                    archivo.close()
+                //Falta hacer el ajuste de refresh.
+                //startActivity(Intent(this, SignosVitales::class.java))
+                }
+                catch (e: Exception){
+                    Toast.makeText(applicationContext, "Error al Guardar", Toast.LENGTH_LONG).show()
+                    Log.d("Error", e.toString())
+                }
             }
 //--------------------------------------------------------------------------------------------------
         }

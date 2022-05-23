@@ -9,7 +9,7 @@
         <entry key="..\:/Users/USER/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/activity_resumen.xml" value="0.1" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/activity_signos_vitales.xml" value="0.5" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/activity_signos_vitales.xml" value="0.25" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/content_login.xml" value="0.2" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/content_main.xml" value="0.4" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/dropdown_medible.xml" value="0.2" />
@@ -17,6 +17,7 @@
         <entry key="..\:/Users/USER/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/estilo_Bordes.xml" value="0.2" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/fragment_first.xml" value="0.5" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/fragment_second.xml" value="0.2" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/row_vitales.xml" value="0.5" />
         <entry key="..\:/Users/kalan/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/activity_crear_perfil.xml" value="0.3625" />
         <entry key="..\:/Users/kalan/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/activity_edicion_perfil.xml" value="0.3625" />
         <entry key="..\:/Users/kalan/AndroidStudioProjects/ProyectoIS/app/src/main/res/layout/activity_login.xml" value="0.25" />

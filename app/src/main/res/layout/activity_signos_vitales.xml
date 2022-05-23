@@ -94,4 +94,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutVitales"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <ListView
+        android:id="@+id/listSignosVitales"
+        android:layout_width="359dp"
+        android:layout_height="339dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guardar_resultados_Vitales" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
