@@ -20,20 +20,27 @@
       app:layout_constraintHorizontal_bias="0.064"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.857"
-      tools:ignore="MissingConstraints" />
+      app:layout_constraintVertical_bias="0.857" />
 
   <ListView
 
       android:id="@+id/listTratamientos"
       android:layout_width="match_parent"
-      android:layout_height="400dp"
-      tools:context=".TicketActivity"
+      android:layout_height="355dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
-      tools:ignore="MissingConstraints"
-      tools:layout_editor_absoluteX="0dp"
-      tools:layout_editor_absoluteY="97dp" />
-
+  <Button
+      android:id="@+id/btnAddTrat"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Agregar tratamiento"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/listTratamientos" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,56 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Medicinas">
-
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/nombreTratamientoMedicinas"
+        android:id="@+id/textRowNombreMed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="Nombre del tratamiento"
+        android:layout_marginTop="16dp"
+        android:text="Nombre"
         android:textColor="@color/black"
         android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/lblMedicinas"
+        android:id="@+id/textRowTipoMed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Medicinas: "
-        android:textColor="@color/black"
+        android:text="Tipo"
         android:textSize="20dp"
-        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombreTratamientoMedicinas" />
+        app:layout_constraintTop_toBottomOf="@+id/textRowNombreMed" />
 
-
-
-    <ListView
-
-        android:id="@+id/listMedicinas"
-        android:layout_width="match_parent"
-        android:layout_height="355dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblMedicinas"
-        app:layout_constraintVertical_bias="0.05" />
-
-    <Button
-        android:id="@+id/botonAddMedicina"
+    <TextView
+        android:id="@+id/textRowRepetMed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Agregar medicina"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="4dp"
+        android:text="Repetición"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listMedicinas" />
+        app:layout_constraintTop_toBottomOf="@+id/textRowTipoMed" />
+
+    <TextView
+        android:id="@+id/textRowHoraMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Hora"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textRowRepetMed" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

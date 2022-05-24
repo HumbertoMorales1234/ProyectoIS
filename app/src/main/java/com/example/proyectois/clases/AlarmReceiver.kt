@@ -15,6 +15,8 @@ class AlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         val i = Intent(context,Medicinas::class.java)
         intent!!.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        hora= intent.getLongExtra("hora",0)
+        minuto= intent.getLongExtra("minuto",0)
         val pendingIntent = PendingIntent.getActivity(context,0,i,0)
         //Se construye la notificación
         val builder = NotificationCompat.Builder(context!!,"e-salud")
