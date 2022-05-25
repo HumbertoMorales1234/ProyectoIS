@@ -31,6 +31,7 @@ class CrearPerfil : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crear_perfil)
+        val Pacientes = ArrayList<Paciente>()
 
         // Configuracion del array adapter de tipos sanguineos - Esto es para que haga funcion de cajita
         val sangres = resources.getStringArray(R.array.tiposSanguineos)
@@ -89,7 +90,7 @@ class CrearPerfil : AppCompatActivity() {
 
                 val gson = Gson()
                 var json:String = gson.toJson(paciente)
-                val Pacientes = ArrayList<Paciente>()
+
 
                 Log.d("Paciente", json)
 
@@ -108,26 +109,30 @@ class CrearPerfil : AppCompatActivity() {
                     for (n:Paciente in PacientesJson){
                         Pacientes.add(n)
                     }
-                    for (n:Paciente in Pacientes){
-                        if (paciente.Correo == n.Correo ){
-                            throw Exception("Ya existe")
+                        for (n:Paciente in Pacientes){
+                            if (paciente.Correo == n.Correo ){
+                                throw Exception("Ya existe")
+                            }
                         }
-                    }
-                    Pacientes.add(paciente)
+                        Pacientes.add(paciente)
                 }
                 catch (e: Exception){
                     Log.d("Error:", e.toString())
                     if (e.message == "Ya existe"){
                         throw Exception("Usuario ya registrado")
+                    }else if(Pacientes.size==0){
+                        Pacientes.add(paciente)
                     }
                 }
 
   //Este try verifica que Se almaceno correctamente ------------------------------------------------
   //------------------------------------------------------------------------------------------------
                 try {
+
                     json = gson.toJson(Pacientes)
+                    Log.d("NombrePaciente" , Pacientes[0].nombre)
                     Log.d("Pacientes JSON> ", json)
-                    val archivo = OutputStreamWriter(openFileOutput("pacientes.txt", Activity.MODE_PRIVATE))
+                    val archivo = OutputStreamWriter(openFileOutput("pacientes.txt", MODE_PRIVATE))
                     archivo.write(json)
                     archivo.close()
 

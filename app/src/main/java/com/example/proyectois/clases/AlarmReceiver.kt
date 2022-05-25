@@ -16,6 +16,7 @@ class AlarmReceiver : BroadcastReceiver() {
         intent!!.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         val nombreMed= intent.getStringExtra("nombreMed")
         val nombreTrat= intent.getStringExtra("nombreTrat")
+        val random = intent.getIntExtra("id",0)
         val pendingIntent = PendingIntent.getActivity(context,0,i,0)
         //Se construye la notificación
         val builder = NotificationCompat.Builder(context!!,"e-salud")
@@ -29,7 +30,7 @@ class AlarmReceiver : BroadcastReceiver() {
 
         // Muestra la notificación
         val notificationManager = NotificationManagerCompat.from(context)
-        notificationManager.notify(123,builder.build())
+        notificationManager.notify(random,builder.build())
 
     }
 }

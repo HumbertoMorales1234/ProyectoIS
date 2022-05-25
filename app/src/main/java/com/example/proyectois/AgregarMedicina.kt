@@ -49,6 +49,7 @@ class AgregarMedicina : AppCompatActivity() {
     private lateinit var nombreTrat : String
     private lateinit var fechaTrat : String
     private lateinit var index : String
+    private val random = (0..2147483647).random()
 
 
     lateinit var tratamientoActual : Tratamiento
@@ -149,7 +150,6 @@ class AgregarMedicina : AppCompatActivity() {
 //BOTÓN GUARDAR, AHORA SÍ VIENE LO CHIDO------------------------------------------------------------
         guardar= findViewById(R.id.btnGuardarMed)
         guardar.setOnClickListener {
-
         if(nombreMedicina.text!=null && tipoMedicina.text!=null && arregloRepeticion.getText() !=null && cantidadMedicina.text!=null && hora!=69 && minuto!=69) {
 
             val medicinaAgregar = Medicamento(
@@ -157,7 +157,8 @@ class AgregarMedicina : AppCompatActivity() {
                tipoMedicina.text.toString(),
                arregloRepeticion.getText().toString(),
                String.format("%02d", hora) + ":" + String.format("%02d", minuto),
-               cantidadMedicina.text.toString()
+               cantidadMedicina.text.toString(),
+                random
                )
 
             arrayMedicinasActual.add(medicinaAgregar)
@@ -214,7 +215,7 @@ class AgregarMedicina : AppCompatActivity() {
         val intent = Intent(this, AlarmReceiver::class.java)
         intent.putExtra("nombreMed",nombreMedicina.text.toString())
         intent.putExtra("nombreTrat",nombreTrat)
-        pendingIntent = PendingIntent.getBroadcast(this,(0..2147483647).random(),intent,PendingIntent.FLAG_UPDATE_CURRENT)
+        pendingIntent = PendingIntent.getBroadcast(this,random,intent,PendingIntent.FLAG_UPDATE_CURRENT)
 
         when(medicinaAgregar.repeticion){
             "1 dosis por día" -> alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.timeInMillis,86400000,pendingIntent)

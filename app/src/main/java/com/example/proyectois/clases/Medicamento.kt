@@ -5,6 +5,7 @@ class Medicamento(
     var tipo: String,
     var repeticion: String,
     var primerHora: String,
-    var cantidad: String
+    var cantidad: String,
+    var id:Int
 ) {
 }
