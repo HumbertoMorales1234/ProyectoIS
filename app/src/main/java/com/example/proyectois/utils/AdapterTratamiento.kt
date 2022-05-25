@@ -26,9 +26,11 @@ class AdapterTratamiento(val context: Context, val res:Int, val list:ArrayList<T
         val view = LayoutInflater.from(context).inflate(res,null)
         val textNombre = view.findViewById<TextView>(R.id.textRowNombreTrat)
         val textFecha = view.findViewById<TextView>(R.id.textRowFechaTrat)
+        val textMedico = view.findViewById<TextView>(R.id.textMedicoTrat)
 
         textNombre.text = list[index].nombre
-        textFecha.text = list[index].fecha.toString()
+        textFecha.text = list[index].fecha
+        textMedico.text ="Médico: "+list[index].medico
 
         return view
 

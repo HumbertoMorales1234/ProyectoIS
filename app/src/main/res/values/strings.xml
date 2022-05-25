@@ -33,4 +33,10 @@
         <item>Ritmo Cardiaco</item>
         <item>Temperatura</item>
     </string-array>
+    <string-array name="repeticionArray">
+        <item>1 dosis por día</item>
+        <item>1 dosis cada 12 horas</item>
+        <item>1 dosis cada 8 horas</item>
+        <item>1 a la hora marcada</item>
+    </string-array>
 </resources>
