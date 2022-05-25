@@ -69,7 +69,7 @@ class LoginActivity : AppCompatActivity(){
                     var nPaciente = 0
                     for (n: Paciente in PacientesJson){
                         //Si la clave es correcta, reemplaza el valor de las preferencias y lanza el activity.
-                        if (n.Correo == correo.getText().toString() && n.contraseña == clave.getText().toString()){
+                        if (n.Correo == correo.text.toString() && n.contraseña == clave.text.toString()){
                             val editor = prefs.edit()
                             editor.putInt(llave, nPaciente)
                             editor.apply()
