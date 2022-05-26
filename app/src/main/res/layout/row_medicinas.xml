@@ -8,8 +8,9 @@
 
     <TextView
         android:id="@+id/textRowNombreMed"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
         android:layout_marginTop="16dp"
         android:text="Nombre"
         android:textColor="@color/black"
@@ -22,8 +23,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:layout_marginLeft="4dp"
         android:id="@+id/textRowTipoMed"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tipo"
         android:textSize="20dp"
@@ -34,8 +36,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textRowNombreMed" />
 
     <TextView
+        android:layout_marginLeft="4dp"
         android:id="@+id/textRowRepetMed"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:textAlignment="viewStart"
@@ -48,8 +51,9 @@
 
 
     <TextView
+        android:layout_marginLeft="4dp"
         android:id="@+id/textRowHoraMed"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:textAlignment="viewStart"

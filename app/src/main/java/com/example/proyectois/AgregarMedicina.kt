@@ -48,7 +48,7 @@ class AgregarMedicina : AppCompatActivity() {
 
     private lateinit var nombreTrat : String
     private lateinit var fechaTrat : String
-    private lateinit var index : String
+    private var index : Int=0
     private val random = (0..2147483647).random()
 
 
@@ -67,7 +67,7 @@ class AgregarMedicina : AppCompatActivity() {
 
         nombreTrat = intent.getStringExtra("nombreTrat").toString()
         fechaTrat = intent.getStringExtra("fechaTrat").toString()
-        index = intent.getStringExtra("index").toString()
+        index = intent.getIntExtra("index",0)
 
         arrayMedicinasActual = ArrayList<Medicamento>()
 
@@ -122,7 +122,6 @@ class AgregarMedicina : AppCompatActivity() {
 //--------------------------------------------------------------------------------------------------
             }catch (e:Exception){
                 Log.d("Error", e.toString())
-                Toast.makeText(applicationContext, "Error al cargar CATCH", Toast.LENGTH_LONG).show()
             }
 
 

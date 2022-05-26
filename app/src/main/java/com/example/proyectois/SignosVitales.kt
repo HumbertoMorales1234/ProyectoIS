@@ -84,30 +84,30 @@ class SignosVitales : AppCompatActivity() {
                 arraysito.add(resultadoMedido)
                 val medicionActual = SignoVital(signoMedido, arraysito)
 
-                var SignosVitales = ArrayList<SignoVital>()
+                var SignosVitales2 = ArrayList<SignoVital>()
 
                 if (Pacientes[prefs.getInt(llave,-1)].vitales == null){
-                    SignosVitales.add(medicionActual)
+                    SignosVitales2.add(medicionActual)
                 }
                 else{
                     var conta = 0
                     var encontrado = false
-                    SignosVitales = Pacientes[prefs.getInt(llave,-1)].vitales!!
-                    for (n: SignoVital in SignosVitales){
+                    SignosVitales2 = Pacientes[prefs.getInt(llave,-1)].vitales!!
+                    for (n: SignoVital in SignosVitales2){
                         if(n.Tipo == signoMedido){
-                            SignosVitales[conta].medidas!!.add(resultadoMedido)
+                            SignosVitales2[conta].medidas!!.add(resultadoMedido)
                             encontrado = true
                         }
                         conta++
                     }
                     if(!encontrado){
-                        SignosVitales.add(medicionActual)
+                        SignosVitales2.add(medicionActual)
                     }
                 }
-                Pacientes[prefs.getInt(llave,-1)].vitales = SignosVitales
+                Pacientes[prefs.getInt(llave,-1)].vitales = SignosVitales2
                 var conta2 =0
 
-                for (n:SignoVital in SignosVitales){
+                for (n:SignoVital in SignosVitales2){
                     Log.d("Tipo Paciente", Pacientes[prefs.getInt(llave,-1)].vitales!![conta2].Tipo)
                     var json = gson.toJson(Pacientes[prefs.getInt(llave,-1)].vitales!![conta2])
                     Log.d("", json)
@@ -119,9 +119,8 @@ class SignosVitales : AppCompatActivity() {
                     archivo.write(json)
                     archivo.close()
                     //Aqui colapsa
-                    finish()
                     startActivity(Intent(this, SignosVitales::class.java))
-
+                    finish()
                 }
                 catch (e: Exception){
                     Toast.makeText(applicationContext, "Error al Guardar", Toast.LENGTH_LONG).show()

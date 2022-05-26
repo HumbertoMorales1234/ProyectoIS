@@ -105,8 +105,8 @@ class TratamientoActivity : AppCompatActivity() {
                     archivo.write(json)
                     archivo.close()
                     //Falta hacer el ajuste de refresh.
-                    finish()
                     startActivity(Intent(this, TratamientoActivity::class.java))
+                    finish()
                 }
                 catch (e: java.lang.Exception){
                     Toast.makeText(applicationContext, "Error al Guardar", Toast.LENGTH_LONG).show()
