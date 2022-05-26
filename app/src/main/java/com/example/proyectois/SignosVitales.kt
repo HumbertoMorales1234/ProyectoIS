@@ -11,6 +11,7 @@ import android.view.MenuItem
 import android.widget.*
 import com.example.proyectois.clases.Paciente
 import com.example.proyectois.clases.SignoVital
+import com.example.proyectois.utils.AdapterMedicinas
 import com.example.proyectois.utils.AdapterVitales
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_signos_vitales.*
@@ -117,13 +118,16 @@ class SignosVitales : AppCompatActivity() {
                     val archivo = OutputStreamWriter(openFileOutput("pacientes.txt", MODE_PRIVATE))
                     archivo.write(json)
                     archivo.close()
-                //Falta hacer el ajuste de refresh.
-                //startActivity(Intent(this, SignosVitales::class.java))
+                    //Aqui colapsa
+                    finish()
+                    startActivity(Intent(this, SignosVitales::class.java))
+
                 }
                 catch (e: Exception){
                     Toast.makeText(applicationContext, "Error al Guardar", Toast.LENGTH_LONG).show()
                     Log.d("Error", e.toString())
                 }
+                otroActivity(Intent(this, SignosVitales::class.java))
             }
 //--------------------------------------------------------------------------------------------------
         }
@@ -139,10 +143,10 @@ class SignosVitales : AppCompatActivity() {
     // Agrega las funcionalidades de los items del menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.signosVitales -> startActivity(Intent(this, SignosVitales::class.java))
-            R.id.resumen -> startActivity(Intent(this, Resumen::class.java))
-            R.id.perfilUsuario -> startActivity(Intent(this, EdicionPerfil::class.java))
-            R.id.medicinas -> startActivity(Intent(this, TratamientoActivity::class.java))
+            R.id.signosVitales -> otroActivity(Intent(this, SignosVitales::class.java))
+            R.id.resumen -> otroActivity(Intent(this, Resumen::class.java))
+            R.id.perfilUsuario -> otroActivity(Intent(this, EdicionPerfil::class.java))
+            R.id.medicinas -> otroActivity(Intent(this, TratamientoActivity::class.java))
             R.id.salirSesion -> salir()
         }
         return super.onOptionsItemSelected(item)
@@ -151,7 +155,12 @@ class SignosVitales : AppCompatActivity() {
         val editor = prefs.edit()
         editor.remove(llave)
         editor.apply()
+        finish()
         startActivity(Intent(this, LoginActivity::class.java))
+    }
+    fun otroActivity( clase : Intent){
+        finish()
+        startActivity(clase)
     }
 //--------------------------------------------------------------------------------------------------
 }

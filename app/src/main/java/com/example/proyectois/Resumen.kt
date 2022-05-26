@@ -11,6 +11,7 @@ import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import com.example.proyectois.clases.Paciente
+import com.example.proyectois.utils.AdapterMedicinas
 import com.example.proyectois.utils.AdapterVitales
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_resumen.*
@@ -18,6 +19,7 @@ import kotlinx.android.synthetic.main.activity_signos_vitales.*
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.lang.Exception
+import kotlin.math.log
 
 
 class Resumen : AppCompatActivity() {
@@ -94,6 +96,20 @@ class Resumen : AppCompatActivity() {
                         )
                     }
                 }
+                if(Pacientes[prefs.getInt(llave,-1)].tratamientos != null){
+                    val ultimo  = Pacientes[prefs.getInt(llave,-1)].tratamientos!!.size
+                    Log.d("Ultimo", ""+ Pacientes[prefs.getInt(llave,-1)].tratamientos!![ultimo-1].nombre)
+                    val medicinaz = Pacientes[prefs.getInt(llave,-1)].tratamientos!![ultimo-1].medicinas
+                    if (medicinaz != null){
+                        Log.d("medizinas", medicinaz[0].nombre)
+                        List_medicinas_Resumen.adapter= medicinaz.let {
+                                AdapterMedicinas(
+                                    this, R.layout.row_medicinas, it
+                                )
+                            }
+                    }
+
+                }
             }catch (e: Exception){
                 Log.d("Error", e.toString())
                 Toast.makeText(applicationContext, "Error al cargar", Toast.LENGTH_LONG).show()
@@ -111,10 +127,10 @@ class Resumen : AppCompatActivity() {
     // Agrega las funcionalidades de los items del menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.signosVitales -> startActivity(Intent(this, SignosVitales::class.java))
-            R.id.resumen -> startActivity(Intent(this, Resumen::class.java))
-            R.id.perfilUsuario -> startActivity(Intent(this, EdicionPerfil::class.java))
-            R.id.medicinas -> startActivity(Intent(this, TratamientoActivity::class.java))
+            R.id.signosVitales -> otroActivity(Intent(this, SignosVitales::class.java))
+            R.id.resumen -> otroActivity(Intent(this, Resumen::class.java))
+            R.id.perfilUsuario -> otroActivity(Intent(this, EdicionPerfil::class.java))
+            R.id.medicinas -> otroActivity(Intent(this, TratamientoActivity::class.java))
             R.id.salirSesion -> salir()
         }
         return super.onOptionsItemSelected(item)
@@ -123,7 +139,12 @@ class Resumen : AppCompatActivity() {
         val editor = prefs.edit()
         editor.remove(llave)
         editor.apply()
+        finish()
         startActivity(Intent(this, LoginActivity::class.java))
+    }
+    fun otroActivity( clase : Intent){
+        finish()
+        startActivity(clase)
     }
 //--------------------------------------------------------------------------------------------------
 }

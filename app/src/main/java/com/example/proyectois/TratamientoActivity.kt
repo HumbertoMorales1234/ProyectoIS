@@ -105,6 +105,7 @@ class TratamientoActivity : AppCompatActivity() {
                     archivo.write(json)
                     archivo.close()
                     //Falta hacer el ajuste de refresh.
+                    finish()
                     startActivity(Intent(this, TratamientoActivity::class.java))
                 }
                 catch (e: java.lang.Exception){
@@ -158,10 +159,10 @@ class TratamientoActivity : AppCompatActivity() {
     // Agrega las funcionalidades de los items del menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.signosVitales -> startActivity(Intent(this, SignosVitales::class.java))
-            R.id.resumen -> startActivity(Intent(this, Resumen::class.java))
-            R.id.perfilUsuario -> startActivity(Intent(this, EdicionPerfil::class.java))
-            R.id.medicinas -> startActivity(Intent(this, TratamientoActivity::class.java))
+            R.id.signosVitales -> otroActivity(Intent(this, SignosVitales::class.java))
+            R.id.resumen -> otroActivity(Intent(this, Resumen::class.java))
+            R.id.perfilUsuario -> otroActivity(Intent(this, EdicionPerfil::class.java))
+            R.id.medicinas -> otroActivity(Intent(this, TratamientoActivity::class.java))
             R.id.salirSesion -> salir()
         }
         return super.onOptionsItemSelected(item)
@@ -170,7 +171,12 @@ class TratamientoActivity : AppCompatActivity() {
         val editor = prefs.edit()
         editor.remove(llave)
         editor.apply()
+        finish()
         startActivity(Intent(this, LoginActivity::class.java))
+    }
+    fun otroActivity( clase : Intent){
+        finish()
+        startActivity(clase)
     }
 //--------------------------------------------------------------------------------------------------
 }

@@ -74,7 +74,8 @@ class LoginActivity : AppCompatActivity(){
                             editor.putInt(llave, nPaciente)
                             editor.apply()
                             Toast.makeText(applicationContext, "Usuario n"+prefs.getInt(llave, -1), Toast.LENGTH_LONG).show()
-                            val intent = Intent(this,EdicionPerfil::class.java)
+                            val intent = Intent(this,bienvenida::class.java)
+                            finish()
                             startActivity(intent)
                         }
                         nPaciente++
@@ -88,7 +89,8 @@ class LoginActivity : AppCompatActivity(){
 
         }else{
  //Si tiene un valor que no es el default, accede directamente y se salta el LogIn -----------------
-            val intent = Intent(this,EdicionPerfil::class.java)
+            val intent = Intent(this,bienvenida::class.java)
+            finish()
             startActivity(intent)
         }
 
