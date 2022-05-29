@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/perfilUsuario"
-        android:title="Perfil de Usuario"
+        android:title="Perfil de Paciente"
         />
     <item
         android:id="@+id/medicinas"

@@ -43,11 +43,11 @@ class bienvenida : AppCompatActivity() {
         val editor = prefs.edit()
         editor.remove(llave)
         editor.apply()
-        finish()
+        //finish()
         startActivity(Intent(this, LoginActivity::class.java))
     }
     fun otroActivity( clase : Intent){
-        finish()
+        //finish()
         startActivity(clase)
     }
 }

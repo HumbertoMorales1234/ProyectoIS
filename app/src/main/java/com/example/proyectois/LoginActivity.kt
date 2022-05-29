@@ -52,7 +52,7 @@ class LoginActivity : AppCompatActivity(){
         //Siempre debe ir anotado el valor por defecto
         prefs.getInt(llave, -1)
 
- //Si el valor de preferencias es el pordefecto, inicia el proceso de Login.
+        //Si el valor de preferencias es el pordefecto, inicia el proceso de Login.
         if(prefs.getInt(llave, -1)==-1){
             btnEntrar.setOnClickListener{
                 val gson = Gson()
@@ -78,17 +78,22 @@ class LoginActivity : AppCompatActivity(){
                             finish()
                             startActivity(intent)
                         }
+                        else{
+                            incorrecto.setVisibility(View.VISIBLE)
+                        }
                         nPaciente++
                     }
-                    incorrecto.setVisibility(View.VISIBLE)
+
                 }catch (e: Exception){
-                    Toast.makeText(applicationContext, e.message, Toast.LENGTH_LONG).show()
+                    incorrecto.setVisibility(View.VISIBLE)
+                    print( e.message)
+                    //Toast.makeText(applicationContext, e.message, Toast.LENGTH_LONG).show()
                 }
             }
- //-------------------------------------------------------------------------------------------------
+            //-------------------------------------------------------------------------------------------------
 
         }else{
- //Si tiene un valor que no es el default, accede directamente y se salta el LogIn -----------------
+            //Si tiene un valor que no es el default, accede directamente y se salta el LogIn -----------------
             val intent = Intent(this,bienvenida::class.java)
             finish()
             startActivity(intent)

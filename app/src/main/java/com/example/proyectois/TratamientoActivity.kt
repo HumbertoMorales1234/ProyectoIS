@@ -175,7 +175,7 @@ class TratamientoActivity : AppCompatActivity() {
         startActivity(Intent(this, LoginActivity::class.java))
     }
     fun otroActivity( clase : Intent){
-        finish()
+        //finish()
         startActivity(clase)
     }
 //--------------------------------------------------------------------------------------------------

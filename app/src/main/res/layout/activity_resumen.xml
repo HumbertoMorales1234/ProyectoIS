@@ -44,11 +44,11 @@
                 android:id="@+id/vieNombreResumen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="48dp"
                 android:text="Nombre: "
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.253"
+                app:layout_constraintHorizontal_bias="0.133"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -56,7 +56,7 @@
                 android:id="@+id/apellidoP_Resumen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:text="Apellido Paterno: "
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -68,11 +68,11 @@
                 android:id="@+id/apellidoM_Resumen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:text="Apellido Materno: "
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.145"
+                app:layout_constraintHorizontal_bias="0.158"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/apellidoP_Resumen" />
 
@@ -80,11 +80,11 @@
                 android:id="@+id/tipoSanguineo_Resumen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="20dp"
                 android:text="Tipo Sanguineo: "
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.166"
+                app:layout_constraintHorizontal_bias="0.153"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/apellidoM_Resumen" />
 
@@ -92,11 +92,11 @@
                 android:id="@+id/cronicos_Resumen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="20dp"
                 android:text="Padecimiento Cronico: "
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.073"
+                app:layout_constraintHorizontal_bias="0.176"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tipoSanguineo_Resumen" />
 
@@ -104,11 +104,11 @@
                 android:id="@+id/alergias_comunes_resumen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:text="Alergias Comunes: "
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.132"
+                app:layout_constraintHorizontal_bias="0.162"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cronicos_Resumen" />
 
@@ -133,7 +133,7 @@
                 android:text="Alergias a Medicamentos: "
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintHorizontal_bias="0.191"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/alergias_comunes_resumen" />
 
@@ -153,16 +153,17 @@
             <ListView
                 android:id="@+id/List_medicinas_Resumen"
                 android:layout_width="383dp"
-                android:layout_height="206dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="266dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.428"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/InfoMedicaView" />
 
             <ListView
                 android:id="@+id/List_Vitales_Resumen"
                 android:layout_width="376dp"
-                android:layout_height="218dp"
+                android:layout_height="271dp"
                 android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -173,8 +174,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:visibility="invisible"
                 android:text="TextView"
+                android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/List_Vitales_Resumen" />

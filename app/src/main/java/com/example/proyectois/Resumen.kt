@@ -103,10 +103,10 @@ class Resumen : AppCompatActivity() {
                     if (medicinaz != null){
                         Log.d("medizinas", medicinaz[0].nombre)
                         List_medicinas_Resumen.adapter= medicinaz.let {
-                                AdapterMedicinas(
-                                    this, R.layout.row_medicinas, it
-                                )
-                            }
+                            AdapterMedicinas(
+                                this, R.layout.row_medicinas, it
+                            )
+                        }
                     }
 
                 }
@@ -118,7 +118,7 @@ class Resumen : AppCompatActivity() {
         }
     }
 
-//Configuración del Menu ---------------------------------------------------------------------------
+    //Configuración del Menu ---------------------------------------------------------------------------
     // Crea al menu de forma visible
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu,menu)
@@ -139,11 +139,11 @@ class Resumen : AppCompatActivity() {
         val editor = prefs.edit()
         editor.remove(llave)
         editor.apply()
-        finish()
+        //finish()
         startActivity(Intent(this, LoginActivity::class.java))
     }
     fun otroActivity( clase : Intent){
-        finish()
+        //finish()
         startActivity(clase)
     }
 //--------------------------------------------------------------------------------------------------

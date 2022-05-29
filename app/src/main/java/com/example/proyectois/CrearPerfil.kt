@@ -142,7 +142,7 @@ class CrearPerfil : AppCompatActivity() {
                 }
 
                 Toast.makeText(applicationContext, "Transacción Exitosa", Toast.LENGTH_LONG).show()
-                finish()
+                //finish()
                 startActivity(Intent(this, LoginActivity::class.java))
  //-------------------------------------------------------------------------------------------------
 
