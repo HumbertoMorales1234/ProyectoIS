@@ -18,7 +18,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/ConfirmaContraseña_editaP"
+                android:id="@+id/ConfirmaContrasena_editaP"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="12dp"
@@ -110,7 +110,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ConfirmaContraseña_editaP" />
+                app:layout_constraintTop_toBottomOf="@+id/ConfirmaContrasena_editaP" />
 
             <Button
                 android:id="@+id/guardarCambios"
@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
                 android:backgroundTint="#D55454"
-                android:text="Guardar Cambios"
+                android:text="Guardar"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.061"
@@ -131,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
                 android:backgroundTint="#5AD2C6"
-                android:text="Cancelar Cambios"
+                android:text="Cancelar"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.935"

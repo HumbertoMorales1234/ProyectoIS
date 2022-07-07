@@ -73,7 +73,6 @@ class LoginActivity : AppCompatActivity(){
                             val editor = prefs.edit()
                             editor.putInt(llave, nPaciente)
                             editor.apply()
-                            Toast.makeText(applicationContext, "Usuario n"+prefs.getInt(llave, -1), Toast.LENGTH_LONG).show()
                             val intent = Intent(this,bienvenida::class.java)
                             finish()
                             startActivity(intent)
@@ -81,7 +80,7 @@ class LoginActivity : AppCompatActivity(){
                         else{
                             incorrecto.setVisibility(View.VISIBLE)
                         }
-                        nPaciente++
+
                     }
 
                 }catch (e: Exception){

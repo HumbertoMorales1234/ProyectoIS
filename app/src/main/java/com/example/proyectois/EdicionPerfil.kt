@@ -60,7 +60,7 @@ class EdicionPerfil : AppCompatActivity() {
         apellidoP = findViewById(R.id.apellidoP_editaP)
         apellidoM = findViewById(R.id.apellidoM_editaP)
         clave = findViewById(R.id.Clave_editaP)
-        confirmar = findViewById(R.id.ConfirmaContraseña_editaP)
+        confirmar = findViewById(R.id.ConfirmaContrasena_editaP)
         alergiasC = findViewById(R.id.alergias_comunes_editaP)
         alergiasM = findViewById(R.id.alergias_medicamentoseditaP)
         arregloSangres = findViewById(R.id.seleccionSanguineoeditaP)

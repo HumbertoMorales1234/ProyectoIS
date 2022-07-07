@@ -62,7 +62,7 @@ class CrearPerfil : AppCompatActivity() {
                 maternoLayout = findViewById(R.id.apellidoM_CreaP)
                 telefonolayout = findViewById(R.id.Correo_CreaP)
                 claveLayout = findViewById(R.id.Clave_CreaP)
-                confirmaLayout = findViewById(R.id.ConfirmaContraseña_CreaP)
+                confirmaLayout = findViewById(R.id.ConfirmaContrasena_CreaP)
                 alergiasC = findViewById(R.id.alergias_comunes_CreaP)
                 alergiasM= findViewById(R.id.alergias_medicamentosCreaP)
 

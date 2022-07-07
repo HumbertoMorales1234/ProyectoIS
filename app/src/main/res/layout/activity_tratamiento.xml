@@ -8,106 +8,90 @@
     tools:context=".TratamientoActivity">
 
 
-  <ScrollView
+  <TextView
+      android:id="@+id/textTratamiento"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:text="Tratamientos: "
+      android:textColor="@color/black"
+
+      android:textSize="25dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.064"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/btnAddTrat" />
+
+  <ListView
+
+      android:id="@+id/listTratamientos"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      tools:layout_editor_absoluteX="0dp"
-      tools:layout_editor_absoluteY="-32dp">
+      android:layout_height="355dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textTratamiento">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+  </ListView>
 
-      <TextView
-          android:id="@+id/textTratamiento"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Tratamientos: "
-          android:textColor="@color/black"
-          android:textSize="25dp"
-          app:layout_constraintBottom_toTopOf="@+id/listTratamientos"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="0.064"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintVertical_bias="0.857" />
+  <TextView
+      android:id="@+id/lblAddTrat"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="28dp"
+      android:text="Datos del tratamiento:"
+      android:textColor="@color/black"
+      android:textSize="20dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.53"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
-      <ListView
+  <EditText
+      android:id="@+id/fechaAddTrat"
+      android:layout_width="wrap_content"
+      android:layout_height="48dp"
+      android:layout_marginTop="4dp"
+      android:background="@drawable/estilo_edit_text"
+      android:ems="10"
+      android:hint="  Fecha del tratamiento"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/nombreAddTrat" />
 
-          android:id="@+id/listTratamientos"
-          android:layout_width="match_parent"
-          android:layout_height="355dp"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="1.0"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintVertical_bias="0.366" />
+  <EditText
+      android:id="@+id/nombreAddTrat"
+      android:layout_width="wrap_content"
+      android:layout_height="48dp"
+      android:layout_marginTop="4dp"
+      android:background="@drawable/estilo_edit_text"
+      android:ems="10"
+      android:hint="  Nombre del tratamiento"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/lblAddTrat" />
 
-      <Button
-          android:id="@+id/btnAddTrat"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Agregar tratamiento"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/medicoAddTrat" />
+  <EditText
+      android:id="@+id/medicoAddTrat"
+      android:layout_width="wrap_content"
+      android:layout_height="48dp"
+      android:layout_marginTop="4dp"
+      android:background="@drawable/estilo_edit_text"
+      android:ems="10"
+      android:hint="  Nombre del médico"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/fechaAddTrat" />
 
-      <TextView
-          android:id="@+id/lblAddTrat"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="Datos del tratamiento:"
-          android:textColor="@color/black"
-          android:textSize="20dp"
-          android:layout_marginTop="6dp"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="0.497"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/listTratamientos" />
+  <Button
+      android:id="@+id/btnAddTrat"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Agregar tratamiento"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/medicoAddTrat" />
 
-      <EditText
-          android:id="@+id/fechaAddTrat"
-          android:layout_width="wrap_content"
-          android:layout_height="48dp"
-          android:layout_marginTop="4dp"
-          android:background="@drawable/estilo_edit_text"
-          android:ems="10"
-          android:hint="  Fecha del tratamiento"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/nombreAddTrat" />
-
-      <EditText
-          android:id="@+id/nombreAddTrat"
-          android:layout_width="wrap_content"
-          android:layout_height="48dp"
-          android:layout_marginTop="4dp"
-          android:background="@drawable/estilo_edit_text"
-          android:ems="10"
-          android:hint="  Nombre del tratamiento"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/lblAddTrat" />
-
-      <EditText
-          android:id="@+id/medicoAddTrat"
-          android:layout_width="wrap_content"
-          android:layout_height="48dp"
-          android:layout_marginTop="4dp"
-          android:background="@drawable/estilo_edit_text"
-          android:ems="10"
-          android:hint="  Nombre del médico"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/fechaAddTrat" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-  </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,13 +6,13 @@ import android.content.Context
 import android.content.Intent
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.example.proyectois.Medicinas
 import com.example.proyectois.R
+import com.example.proyectois.TratamientoActivity
 
 class AlarmReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
-        val i = Intent(context,Medicinas::class.java)
+        val i = Intent(context, TratamientoActivity::class.java)
         intent!!.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         val nombreMed= intent.getStringExtra("nombreMed")
         val nombreTrat= intent.getStringExtra("nombreTrat")
